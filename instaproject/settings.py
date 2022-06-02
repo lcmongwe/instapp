@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'instapp',
 ]
 
 MIDDLEWARE = [
@@ -75,8 +76,10 @@ WSGI_APPLICATION = 'instaproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'instapp',
+        'USER': 'lucy',
+    'PASSWORD':'4444',
     }
 }
 
