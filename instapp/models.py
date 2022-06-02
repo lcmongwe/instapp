@@ -16,6 +16,11 @@ class Comment(models.Model):
     comment= models.TextField()
     author=models.ForeignKey(Profile, null=True)
 
+    def save_comment(self):
+        self.save()
+
+    def delete_comment(self):
+        self.delete()
 
     def __str__(self):
             return self.comment
@@ -30,3 +35,12 @@ class Image(models.Model):
 
     def __str__(self):
         return self.name
+
+    def save_image(self):
+        self.save()
+
+    def delete_image(self):
+        self.delete()
+
+    class meta:
+        ordering =['first_name']
