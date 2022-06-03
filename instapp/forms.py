@@ -3,6 +3,56 @@ from django.contrib.auth.models import User
 from django import forms
 
 
+from django.forms import ModelForm
+from .models import Profile,Image,Comment,Likes
+
+
+
+
+
+
+# create upload from
+class UploadImageForm(ModelForm):
+    class Meta:
+        model= Image
+        # fields= "__all"
+        fields=('image', 'img_name', 'imge_caption',   )
+
+        labels={
+            'img_name':'name',
+            'imge_caption':'caption',     
+        }
+
+        widgets={
+           'img_name': forms.TextInput(attrs={'class': 'form-control','placeholder':'  name '}),
+           'image':forms.ImageField(attrs={'class': 'form-control','placeholder':'select image'}),
+           'imge_caption':forms.TextInput(attrs={'class': 'form-control','placeholder':'caption'}),
+
+        }
+
+
+
+# create a profile form
+class ProfileForm(ModelForm):
+    class Meta:
+        model= Profile
+        # fields= "__all"
+        fields=('name', 'username', 'profile_photo',  'bio',  )
+
+        labels={
+            'name':'name',
+            'username':'username',
+            'profile_photo':'photo',
+            'bio':'bio',
+        }
+
+        widgets={
+           'name': forms.TextInput(attrs={'class': 'form-control','placeholder':'name '}),
+           'username':forms.TextInput(attrs={'class': 'form-control','placeholder':' username'}),
+           'profile_photo':forms.ImageField(attrs={'class': 'form-control','placeholder':'profile-photo'}),
+           'bio':forms.Textarea(attrs={'class': 'form-control','placeholder':'bio'}),
+          
+        }
 
 
 
