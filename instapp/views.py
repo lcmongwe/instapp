@@ -17,6 +17,9 @@ def home(request):
     
     return render(request, 'home.html', {'posts': posts})
 
+def profile(request):
+    profile=Profile.objects.all()
+    return render(request, 'profile.html',{'profile': profile})
 
 
 
