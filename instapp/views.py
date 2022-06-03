@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404,HttpResponseRedirect
-# from .models import Article
-# import datetime as dt
+from .models import *
+import datetime as dt
 # from .forms import NewsLetterForm
 
 # authentication
@@ -13,9 +13,15 @@ from .forms import RegisterUserForm
 
 # Create your views here.
 def home(request):
+    posts=Image.objects.all()
     
-    
-    return render(request, 'home.html', {})
+    return render(request, 'home.html', {'posts': posts})
+
+
+
+
+
+
 
 
 

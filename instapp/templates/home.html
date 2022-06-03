@@ -1,4 +1,16 @@
 {% extends 'base.html' %}
 {% block content%}
-<p>welcome home</p>
+
+
+{%for post in posts%}
+
+<div class="card" style="width: 38rem;">
+  <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap" width="400px" height="400px"></div>
+  <div class="card-body">
+    <p class="card-text">{{post.imge_caption}}</p>
+  </div>
+</div>
+{%endfor%}
+
+
 {%endblock%}
