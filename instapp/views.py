@@ -26,7 +26,23 @@ def profile(request):
     profile=Profile.objects.all()
     return render(request, 'profile.html',{'profile': profile})
 
+def post_picture(request):
+    form=UploadImageForm
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+        messages.success(request,('picture posted'))
 
+    return render(request, 'post.html',{'form': form,})
+
+def create_profile(request):
+    form=ProfileForm(request.POST)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+        messages.success(request,('Profile created'))
+
+    return render(request, 'create_profile.html',{'form': form,})
 
 
 

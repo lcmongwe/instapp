@@ -14,7 +14,7 @@
     ></script>
     <title>INSTA-CLONE!</title>
     {% block styles %} 
-    <link rel="stylesheet" href="{% static 'css/instapp.css' %}">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
    
      {% endblock %}
     <!-- <style>
@@ -24,7 +24,6 @@
   <body>
     {% include 'navbar.html'%}
 
-<div class="container">
 
   {%if messages%}
 {%for message in messages%}
@@ -38,6 +37,7 @@
 {%endfor%}
   {%endif%}
 
+<div class="container-fluid">
 
 
 {%block content%}

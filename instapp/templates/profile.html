@@ -8,8 +8,10 @@
 {%for post in profile%}
 
 <div class="card" style="width: 38rem;">
-  <img class="card-img-top" src="{{post.profile_photo.url}}" alt="Card image cap" width="400px" height="400px"></div>
-  <div class="card-body">
+  {% if post.profile_photo%}
+    <img class="card-img-top" src="{{post.profile_photo.url}}" alt="Card image cap" width="400px" height="400px"></div>
+ {%endif%}
+    <div class="card-body">
     <p class="card-text">Name: {{post.name}} <br> Username: {{post.username}}</p>
 
     <p class="card-text">{{post.imge_caption}}</p>

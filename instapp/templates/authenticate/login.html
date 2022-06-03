@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% block content%}
-
+<div class="loginform">
+<div class="forml">
 <h1>LogIn</h1>
 
 <form action="" method="POST">
 
     {% csrf_token %}
-
-    <form>
-  <div class="form-group">
+    
+  <div class="form-group ">
     <label for="exampleInputEmail1">Username</label>
     <input type="text" class="form-control" name="username" aria-describedby="emailHelp" placeholder="Enter username">
  
@@ -20,8 +20,9 @@
    
 <input type = "submit" value = "submit" class = "btn btn-secondary">
 </form>
+</div>
 
-
+</div>
 
 
 {%endblock%}
