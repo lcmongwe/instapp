@@ -56,6 +56,24 @@ class ProfileForm(ModelForm):
 
 
 
+# create a comment form
+class CommentForm(ModelForm):
+    class Meta:
+        model= Comment
+        # fields= "__all"
+        fields=('comment',   )
+
+        labels={
+            'comment':'comment',
+
+        }
+
+        widgets={
+           'comment': forms.TextInput(attrs={'class': 'form-control','placeholder':'name '}),
+        }
+
+
+
 
 
 
