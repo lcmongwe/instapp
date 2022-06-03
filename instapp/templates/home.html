@@ -8,17 +8,22 @@
 {%for post in posts%}
 
 <div class="card" style="width: 38rem;">
-  <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap" width="400px" height="400px"></div>
+  <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap" width="400px" height="400px">
   <div class="card-body">
+      <a href="#" class="card-link"><i class="fa fa-heart-o " aria-hidden="true"></i></a>
     <p class="card-text"><span style="color:blue">#{{post.img_name}}</span></p>
 
     <p class="card-text">{{post.imge_caption}}</p>
   </div>
-  <div class="card-body">
-    <a href="#" class="card-link"><i class="fa fa-heart-o" aria-hidden="true"></i></a>
-    <a href="#" class="card-link">comment</a>
-  </div>
-
+  
+    
+    <form action="">
+        {%csrf_token%}
+       <p>{{form}}
+        <input type="submit"></p> 
+    </form>
+  
+</div>
 {%endfor%}
 
 

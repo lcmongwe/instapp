@@ -4,7 +4,7 @@ from django import forms
 
 
 from django.forms import ModelForm
-from .models import Profile,Image,Comment,Likes
+from .models import Profile,Image,Comment
 
 
 
@@ -25,7 +25,7 @@ class UploadImageForm(ModelForm):
 
         widgets={
            'img_name': forms.TextInput(attrs={'class': 'form-control','placeholder':'  name '}),
-           'image':forms.ImageField(attrs={'class': 'form-control','placeholder':'select image'}),
+           'image':forms.ImageField,
            'imge_caption':forms.TextInput(attrs={'class': 'form-control','placeholder':'caption'}),
 
         }
@@ -49,7 +49,7 @@ class ProfileForm(ModelForm):
         widgets={
            'name': forms.TextInput(attrs={'class': 'form-control','placeholder':'name '}),
            'username':forms.TextInput(attrs={'class': 'form-control','placeholder':' username'}),
-           'profile_photo':forms.ImageField(attrs={'class': 'form-control','placeholder':'profile-photo'}),
+           'profile_photo':forms.ImageField,
            'bio':forms.Textarea(attrs={'class': 'form-control','placeholder':'bio'}),
           
         }
@@ -64,12 +64,12 @@ class CommentForm(ModelForm):
         fields=('comment',   )
 
         labels={
-            'comment':'comment',
+            'comment':'',
 
         }
 
         widgets={
-           'comment': forms.TextInput(attrs={'class': 'form-control','placeholder':'name '}),
+           'comment': forms.TextInput(attrs={'placeholder':' post a comment '}),
         }
 
 

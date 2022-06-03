@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404,HttpResponseRedirect
 from .models import *
 import datetime as dt
-# from .forms import NewsLetterForm
+from .forms import *
 
 # authentication
 from django.shortcuts import render,redirect
@@ -14,8 +14,13 @@ from .forms import RegisterUserForm
 # Create your views here.
 def home(request):
     posts=Image.objects.all()
-    
-    return render(request, 'home.html', {'posts': posts})
+    form=CommentForm
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+        messages.success(request,('comment posted'))
+
+    return render(request, 'home.html', {'posts': posts,'form': form})
 
 def profile(request):
     profile=Profile.objects.all()
