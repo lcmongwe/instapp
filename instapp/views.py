@@ -14,7 +14,7 @@ from .forms import RegisterUserForm
 # Create your views here.
 def home(request):
     
-    # FUNCTION TO CONVERT DATE OBJECT TO FIND EXACT DAY
+    
     return render(request, 'home.html', {})
 
 
