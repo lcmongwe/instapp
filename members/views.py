@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
-from ..instapp.forms import RegisterUserForm
+from .forms import RegisterUserForm
 # Create your views here.
 
 def login_user(request):

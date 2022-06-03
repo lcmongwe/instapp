@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 
 class Image(models.Model):
     image = models.ImageField(upload_to='pics/',blank=True)
-    name = models.CharField(max_length=200, blank=True)
-    caption = models.CharField(max_length=200,blank=True)
+    img_name = models.CharField(max_length=200, blank=True)
+    imge_caption = models.CharField(max_length=200,blank=True)
     date_posted = models.DateTimeField(auto_now_add=True,blank=True)
 
 

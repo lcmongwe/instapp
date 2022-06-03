@@ -22,11 +22,6 @@ def home(request):
 
 
 
-
-
-
-
-
 # AUTHENTICATION
 def login_user(request):
     if request.method == 'POST':
