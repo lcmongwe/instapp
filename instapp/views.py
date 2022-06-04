@@ -27,7 +27,7 @@ def profile(request):
     return render(request, 'profile.html',{'profile': profile})
 
 def post_picture(request):
-    form=UploadImageForm
+    form=UploadImageForm(request.POST,request.FILES)
     if request.method == 'POST':
         if form.is_valid():
             form.save()

@@ -25,7 +25,7 @@ class UploadImageForm(ModelForm):
 
         widgets={
            'img_name': forms.TextInput(attrs={'class': 'form-control','placeholder':'  name '}),
-           'image':forms.ImageField,
+           
            'imge_caption':forms.TextInput(attrs={'class': 'form-control','placeholder':'caption'}),
 
         }

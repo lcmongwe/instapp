@@ -19,7 +19,9 @@
 <div class="card-body">
     Bio <br>{{post.bio}}
 </div>
-<button type="button" class="btn btn-outline-secondary">Update Profile</button>
+<button type="button" class="btn btn-outline-secondary">
+        <a class="" href="{% url 'update_profile' post.id %}"> Update Profile</a>
+ </button>
 
 {%endfor%}
 
