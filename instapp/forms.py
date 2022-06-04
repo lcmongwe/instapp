@@ -15,7 +15,7 @@ from .models import Profile,Image,Comment
 class UploadImageForm(ModelForm):
     class Meta:
         model= Image
-        # fields= "__all"
+        # fields= "__all__"
         fields=('image', 'img_name', 'imge_caption',   )
 
         labels={
@@ -36,7 +36,7 @@ class UploadImageForm(ModelForm):
 class ProfileForm(ModelForm):
     class Meta:
         model= Profile
-        # fields= "__all"
+        # fields= "__all_"
         fields=('name', 'username', 'profile_photo',  'bio',  )
 
         labels={
@@ -60,7 +60,7 @@ class ProfileForm(ModelForm):
 class CommentForm(ModelForm):
     class Meta:
         model= Comment
-        # fields= "__all"
+        # fields= "__all__"
         fields=('comment',   )
 
         labels={
