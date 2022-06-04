@@ -10,6 +10,7 @@ urlpatterns=[
     path('myprofile',views.profile,name='myprofile'),
     path('post',views.post_picture,name='post'),
     path('profile',views.create_profile,name='profile'),
+    path('update_profile/<profile_id>', views.update_profile, name="update_profile"),
 
 
     path('login-user', views.login_user, name="login"),
