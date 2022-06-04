@@ -16,7 +16,7 @@ there was an error with the form
 <div class="formr">
   <h1>Register</h1>
 
-<form action="{% url 'profile'%}" method="POST">
+<form action="{% url 'profile'%}" method="POST" enctype="multipart/form-data">
 
     {% csrf_token %}
 

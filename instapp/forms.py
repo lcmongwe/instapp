@@ -36,23 +36,23 @@ class UploadImageForm(ModelForm):
 class ProfileForm(ModelForm):
     class Meta:
         model= Profile
-        fields= "__all__"
-        # fields=('name', 'username', 'profile_photo',  'bio',  )
+        # fields= "__all"
+        fields=('name', 'username', 'profile_photo',  'bio',  )
 
-        # labels={
-        #     'name':'name',
-        #     'username':'username',
-        #     'profile_photo':'photo',
-        #     'bio':'bio',
-        # }
+        labels={
+            'name':'name',
+            'username':'username',
+            'profile_photo':'photo',
+            'bio':'bio',
+        }
 
-        # widgets={
-        #    'name': forms.TextInput(attrs={'class': 'form-control','placeholder':'name '}),
-        #    'username':forms.TextInput(attrs={'class': 'form-control','placeholder':' username'}),
-        #    'profile_photo':forms.ImageField(),
-        #    'bio':forms.Textarea(attrs={'class': 'form-control','placeholder':'bio'}),
+        widgets={
+           'name': forms.TextInput(attrs={'class': 'form-control','placeholder':'name '}),
+           'username':forms.TextInput(attrs={'class': 'form-control','placeholder':' username'}),
+           
+           'bio':forms.Textarea(attrs={'class': 'form-control','placeholder':'bio'}),
           
-        # }
+        }
 
 
 
