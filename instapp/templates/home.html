@@ -17,7 +17,7 @@
     <div class="card home-card" id="home-card" style="width: 38rem;">
   <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap" width="400px" height="400px">
   <div class="card-body">
-   <p> <a href="#" class="card-link"><i class="fa fa-heart-o " aria-hidden="true"></i></a><button type="button" class="btn btn-outline-secondary btn-sm">Follow</button></p>
+   <p> <a href="#" class="card-link"><button type="button" class="btn btn-outline-danger btn-sm">like</button><i class="fa fa-heart-o " aria-hidden="true"></i></a><button type="button" class="btn btn-outline-danger btn-sm">Follow</button></p>
     <p class="card-text"><span style="color:blue">#{{post.img_name}}</span></p>
 
     <p class="card-text">{{post.imge_caption}}</p>
@@ -37,21 +37,25 @@
 {%endfor%}
   </div>
 
-  <div class="col-md-2"></div>
+  <div class="col-md-1"></div>
 
 
   <div class="col-md-2">
-    <div class="know">
+  
 <p>  people you may know</p>
 
     {%for post in profile%}
-
-<div class="card" style="width: 100px;">
+  <div class="knowing">
   {% if post.profile_photo%}
-    <img class="card-img-top" src="{{post.profile_photo.url}}" alt="Card image cap" width="200px" height="100px"> {{post.name}} <a href="#" class="card-link">follow</a> </div>
+    <div class="">
+
+    <img src="{{post.profile_photo.url}}" width="50px" height="50px" class="knowing-image"> {{post.name}} <button type="button" class="btn btn-outline-danger btn-sm">Follow {{post.name}}</button>
+   </div>
  {%endif%}
- {{post.name}}
+<!-- <div class="profile-name">{{post.name}}</div> -->
+    </div>
 {%endfor%}
+<br>
   </div>
 </div>
 

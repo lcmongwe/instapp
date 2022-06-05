@@ -68,9 +68,25 @@
 /* home.html */
 
 #home-card{
-  border-radius: 2px;
-
-  
+  border-radius: 10px;
+  padding: 20px
 }
+
+.knowing{
+  width: 100%;
+  background-color: #fff;
+  height:40px;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+.knowing-image{
+  width: 30%;
+  height:60px;
+  background-color: blue;
+  /* border: 20px solid red; */
+  border-radius:250rem;
+}
+
 
 /* home ends */
