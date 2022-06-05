@@ -55,12 +55,12 @@
     </ul>
 
 
-    <form class="d-flex" method="POST" action="">
+    <form class="d-flex" method="POST" action="{% url 'search_profile'%}">
       {%csrf_token%}
         <input
         class="form-control mr-sm-2"
         type="search"
-        placeholder="Search People"
+        placeholder="Search people"
         aria-label="Search" name="searched"
         
       />
