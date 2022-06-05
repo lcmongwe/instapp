@@ -14,7 +14,7 @@ from .forms import RegisterUserForm
 # Create your views here.
 def home(request):
     posts=Image.objects.all()
-    form=CommentForm
+    form=CommentForm(request.POST)
     if request.method == 'POST':
         if form.is_valid():
             form.save()

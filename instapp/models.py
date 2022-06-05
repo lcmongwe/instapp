@@ -8,7 +8,7 @@ class Image(models.Model):
     img_name = models.CharField(max_length=200, blank=True)
     imge_caption = models.CharField(max_length=200,blank=True)
     date_posted = models.DateTimeField(auto_now_add=True,blank=True)
-
+    # comment = models.ForeignKey(Comment, blank=True,null=True)
 
     def save_image(self):
         self.save()

@@ -17,10 +17,12 @@
   </div>
   
     
-    <form action="">
+    <form action="{% url 'comment' post.id %}" method="POST">
         {%csrf_token%}
        <p>{{form}}
-        <input type="submit"></p> 
+         <input type="submit">
+
+        </p> 
     </form>
   
 </div>
