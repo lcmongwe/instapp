@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{%load static%}
 
 
 {% block content%}
@@ -45,25 +46,22 @@
 <p>  people you may know</p>
 
     {%for post in profile%}
-  <div class="knowing">
   {% if post.profile_photo%}
-    <div class="">
+  <div class="knowing">
+    
 
     <img src="{{post.profile_photo.url}}" width="50px" height="50px" class="knowing-image"> {{post.name}} <button type="button" class="btn btn-outline-danger btn-sm">Follow</button>
-   </div>
- {%endif%}
-<!-- <div class="profile-name">{{post.name}}</div> -->
     </div>
+   
+ {%endif%}
+
+   <br> 
 {%endfor%}
-<br>
+
+
+
   </div>
 </div>
-
-
-
-
-
-
 
 
 {%endblock%}
