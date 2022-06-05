@@ -12,6 +12,7 @@ urlpatterns=[
     path('profile',views.create_profile,name='profile'),
     path('update_profile/<profile_id>', views.update_profile, name="update_profile"),
     path('comment/<image_id>', views.comment, name="comment"),
+    path('search/<profile_id>', views.search_profile, name="search_profile"),
 
 
 

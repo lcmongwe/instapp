@@ -64,6 +64,17 @@ def update_profile(request,profile_id):
         return redirect('myprofile')
     return render(request, 'update_profile.html',{'profile':profile,'form':form})
 
+def search_profile(request, profile_id):
+    if request.method == 'POST':
+        searched=request.POST.get('searched')
+        profiles=Profile.objects.filter(name__contains=searched)
+        return render(request, 'searched.html',{'searched':searched,'profiles':profiles})
+       
+
+    else:
+        return render(request, 'searched.html',{})
+
+
 
 
 

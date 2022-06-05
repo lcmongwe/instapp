@@ -38,7 +38,7 @@ class Profile(models.Model):
 class Comment(models.Model):
     comment = models.TextField(max_length=200,null=True, blank=True)
     image = models.ForeignKey(Image,on_delete=models.CASCADE,null=True,blank=True)
-    author = models.ForeignKey(Profile,on_delete=models.CASCADE, blank=True)
+    author = models.ForeignKey(Profile,on_delete=models.CASCADE, blank=True,null=True)
 
     def save_comment(self):
         self.save()
