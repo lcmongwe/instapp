@@ -18,3 +18,21 @@ This is a simple Django program that allows a user to singup,login and log out o
 
 - A user can like  a photo.
 - A user can  click on the image to view it's details. 
+
+
+### :pushpin:PROJECT SETUP INSTRUCTIONS
+
+- Open terminal {Ctrl +Alt + T}
+- git clone https://github.com/lcmongwe/myinsta.git
+- cd myblog
+- code . or atom . depending on your text editor
+- python3 manage.py runserver
+
+### :computer: TECHNOLOGIES USED
+
+- PYTHON
+- HTML,CSS and Bootstrap
+- Django Framework
+- Postrgressql
+- MARKDOWN
+- Heroku
