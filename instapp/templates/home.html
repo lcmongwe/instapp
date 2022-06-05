@@ -5,9 +5,16 @@
 
 
 
-{%for post in posts%}
 
-<div class="card" style="width: 38rem;">
+
+<div class="row" id="row1">
+
+  <div class="col-md-2"></div>
+
+
+  <div class="col-md-6">{%for post in posts%}
+
+    <div class="card home-card" id="home-card" style="width: 38rem;">
   <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap" width="400px" height="400px">
   <div class="card-body">
    <p> <a href="#" class="card-link"><i class="fa fa-heart-o " aria-hidden="true"></i></a><button type="button" class="btn btn-outline-secondary">Follow</button></p>
@@ -28,6 +35,27 @@
 </div>
 <br><br>
 {%endfor%}
+  </div>
+
+  <div class="col-md-2"></div>
+
+
+  <div class="col-md-2">
+    <div class="know">
+<p>  people you may know</p>
+
+    {%for post in profile%}
+
+<div class="card" style="width: 100px;">
+  {% if post.profile_photo%}
+    <img class="card-img-top" src="{{post.profile_photo.url}}" alt="Card image cap" width="200px" height="100px"> {{post.name}} <a href="#" class="card-link">follow</a> </div>
+ {%endif%}
+ {{post.name}}
+{%endfor%}
+  </div>
+</div>
+
+
 
 
 

@@ -1,0 +1,75 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  /* background: rgb(190, 185, 185); */
+  
+}
+
+/* login.html */
+
+.loginform{
+  background:rgb(169, 155, 155);
+  height: 60vh;
+  width:60%;
+  margin-left:20%;
+  border-radius:10px
+ 
+}
+
+.forml{
+  width:60%;
+  height:60vh;
+  margin: 50px ;
+  margin-left: 40%;
+  background: rgb(142, 125, 125);
+  border-radius: 10px;
+  padding: 10px
+  
+}
+
+/* login ends */
+
+/* register.html */
+.registerform{
+  background:rgb(169, 155, 155);
+  height: auto;
+  width:60%;
+  margin-left:20%;
+  border-radius:10px;
+  
+ 
+}
+
+.formr{
+  width:60%;
+  height:auto;
+  margin: 50px ;
+  margin-left: 40%;
+  background: rgb(142, 125, 125);
+  border-radius: 10px;
+  padding: 20px
+  
+}
+
+
+/* register ends */
+
+
+
+/* home.html */
+
+#home-card{
+  border-radius: 20px;
+  background:rgb(169, 155, 155);
+  
+}
+
+#row1{
+  color:red
+}
+/* home ends */

@@ -13,6 +13,8 @@ from .forms import RegisterUserForm
 
 # Create your views here.
 def home(request):
+    profile=Profile.objects.all()
+
     posts=Image.objects.all()
     form=CommentForm(request.POST)
     if request.method == 'POST':
@@ -20,7 +22,7 @@ def home(request):
             form.save()
         messages.success(request,('comment posted'))
 
-    return render(request, 'home.html', {'posts': posts,'form': form})
+    return render(request, 'home.html', {'posts': posts,'form': form,'profile':profile})
 
 
 
