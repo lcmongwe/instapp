@@ -10,11 +10,23 @@
   
 }
 
+/* navbar */
+.mynav{
+  /* position: sticky; */
+  color: white;
+  font-weight: bolder;
+  background: rgba(54, 87, 137, 0.37)
+  /* font-size: 28px; */
+  /* z-index: 100px; */
+}
+/* navbar ends */
+
 /* login.html */
 
 .loginform{
   /* background:rgb(169, 155, 155); */
-  background: linear-gradient(180deg, rgba(185, 105, 31, 0.66) 0%, rgba(6, 43, 172, 0.429) 100%);
+  /* background: linear-gradient(180deg, rgba(185, 105, 31, 0.66) 0%, rgba(6, 43, 172, 0.429) 100%); */
+  background: rgba(54, 87, 137, 0.37);
   height: 60vh;
   width:60%;
   margin-left:20%;
@@ -27,8 +39,8 @@
   height:60vh;
   margin: 50px ;
   margin-left: 40%;
-  /* background: rgb(142, 125, 125); */
-  background: linear-gradient(180deg, rgba(185, 105, 31, 0.66) 0%, rgba(6, 43, 172, 0.429) 100%);
+  background: linear-gradient(180deg, rgba(22, 30, 61, 0.65) 0%, rgba(238, 238, 238, 0.65) 100%);
+  /* background: linear-gradient(180deg, rgba(185, 105, 31, 0.66) 0%, rgba(6, 43, 172, 0.429) 100%); */
   border-radius: 10px;
   padding: 10px
   
@@ -38,8 +50,9 @@
 
 /* register.html */
 .registerform{
-  /* background:rgb(169, 155, 155); */
-  background: linear-gradient(180deg, rgba(185, 105, 31, 0.66) 0%, rgba(6, 43, 172, 0.429) 100%);
+  background: rgba(54, 87, 137, 0.37);
+  
+  /* background: linear-gradient(180deg, rgba(185, 105, 31, 0.66) 0%, rgba(6, 43, 172, 0.429) 100%); */
   height: auto;
   width:60%;
   margin-left:20%;
@@ -53,8 +66,9 @@
   height:auto;
   margin: 50px ;
   margin-left: 40%;
-  /* background: rgb(142, 125, 125); */
-  background: linear-gradient(180deg, rgba(185, 105, 31, 0.66) 0%, rgba(6, 43, 172, 0.429) 100%);
+  background: linear-gradient(180deg, rgba(22, 30, 61, 0.65) 0%, rgba(238, 238, 238, 0.65) 100%);
+  
+  /* background: linear-gradient(180deg, rgba(185, 105, 31, 0.66) 0%, rgba(6, 43, 172, 0.429) 100%); */
   border-radius: 10px;
   padding: 20px
   
@@ -66,6 +80,9 @@
 
 
 /* home.html */
+#row1{
+  margin-top:20px
+}
 
 #home-card{
   border-radius: 10px;
