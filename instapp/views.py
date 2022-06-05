@@ -1,3 +1,4 @@
+from email import message
 from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404,HttpResponseRedirect
 from .models import *
@@ -10,6 +11,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from .forms import RegisterUserForm
+from django.core.mail import send_mail
 
 # Create your views here.
 def home(request):
@@ -106,6 +108,14 @@ def register_user(request):
     if request.method == 'POST':
         form =RegisterUserForm(request.POST)
         if form.is_valid():
+            username=form.Post['username']
+            email=form.Post['email']
+            subject='welcome to InstaApp'
+            message=f'Hi {username} welcome to InstaApp and have fun! '
+            from_email=settings.EMAIL_HOST_USER
+            recipients=[email]
+            send_mail(subject, message,from_email,recipients,fail_silently=False)
+
             form.save()
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
