@@ -36,3 +36,18 @@ This is a simple Django program that allows a user to singup,login and log out o
 - Postrgressql
 - MARKDOWN
 - Heroku
+
+### :pushpin: KNOWN BUGS
+No known bugs so far
+
+### :telephone_receiver: CONTACT INFORMATION
+
+Have any questions? reach me on:
+
+1. Twitter : @lucy_Mongwe
+2. faceboook : Lucy Mongwe
+3. Email : lcmongwe@gmail.com
+
+## licence
+MIT licence
+copyright(c)2022 Lucy Mongwe
