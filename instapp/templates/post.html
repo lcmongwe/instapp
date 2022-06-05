@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block content%}
-
+<div class="registerform"></div>
+<div class="formr"><
 {%if form.errors%}
 
 <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -13,8 +14,8 @@ there was an error with the form
 {%endif%}
 
 
-<div class="formr">
-  <h1>Register</h1>
+<div class="">
+  <h1>Create a Post</h1>
 
 <form action="{% url 'post'%}" method="POST" enctype="multipart/form-data">
 

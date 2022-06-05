@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block content%}
+<div class="registerform">
+<div class="formr">
 
 {%if form.errors%}
 
@@ -13,8 +15,8 @@ there was an error with the form
 {%endif%}
 
 
-<div class="formr">
-  <h1>Register</h1>
+<div class="">
+  <h1>Create Profile</h1>
 
 <form action="{% url 'profile'%}" method="POST" enctype="multipart/form-data">
 
@@ -26,7 +28,8 @@ there was an error with the form
 </form>
 </div>
 
-
+</div>
+</div>
 
 
 {%endblock%}
