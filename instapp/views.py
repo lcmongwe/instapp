@@ -22,6 +22,17 @@ def home(request):
 
     return render(request, 'home.html', {'posts': posts,'form': form})
 
+
+
+def comment(request,image_id):
+    comment=Comment.objects.get(pk=image_id)
+    form=CommentForm(request.POST )
+    if form.is_valid():
+        form.save()
+        return redirect('home')
+    return render(request, 'home.html',{'comment':comment,'form':form})
+
+
 def profile(request):
     profile=Profile.objects.all()
     return render(request, 'profile.html',{'profile': profile})
