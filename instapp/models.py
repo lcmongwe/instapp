@@ -9,6 +9,10 @@ class Image(models.Model):
     imge_caption = models.CharField(max_length=200,blank=True)
     date_posted = models.DateTimeField(auto_now_add=True,blank=True)
     # comment = models.ForeignKey(Comment, blank=True,null=True)
+    likess = models.ManyToManyField(User,related_name='posts')
+
+    def total_likes(self):
+        return self.likess.count()
 
     def save_image(self):
         self.save()

@@ -1,3 +1,4 @@
+from audioop import reverse
 from email import message
 from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404,HttpResponseRedirect
@@ -8,7 +9,7 @@ from django.core.mail import send_mail
 from django.conf import settings
 
 # authentication
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
@@ -37,6 +38,13 @@ def comment(request,image_id):
         form.save()
         return redirect('home')
     return render(request, 'home.html',{'comment':comment,'form':form})
+
+
+def like(request,pk ):
+    post=get_object_or_404(Image,id=request.POST.get('post_id'))
+    post.likess.add(request.user)
+    # return HttpResponseRedirect(reverse('home',args=[str(pk)]))
+    return redirect('home',args=[str(pk)])
 
 
 def profile(request):
