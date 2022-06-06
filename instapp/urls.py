@@ -13,7 +13,7 @@ urlpatterns=[
     path('update_profile/<profile_id>', views.update_profile, name="update_profile"),
     path('comment/<image_id>', views.comment, name="comment"),
     path('search', views.search_profile, name="search_profile"),
-    path('like/<int:pk>', views.like, name="like"),
+    path('like/<post_id>', views.like, name="like"),
 
 
 

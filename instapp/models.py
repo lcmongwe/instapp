@@ -8,8 +8,7 @@ class Image(models.Model):
     img_name = models.CharField(max_length=200, blank=True)
     imge_caption = models.CharField(max_length=200,blank=True)
     date_posted = models.DateTimeField(auto_now_add=True,blank=True)
-    # comment = models.ForeignKey(Comment, blank=True,null=True)
-    likess = models.ManyToManyField(User,related_name='posts')
+    likes=models.IntegerField(default=0)
 
     def total_likes(self):
         return self.likess.count()
@@ -54,8 +53,8 @@ class Comment(models.Model):
         return self.comment
  
 class Likes(models.Model):
-   user = models.ForeignKey(Profile,  on_delete=models.CASCADE)
-   image = models.ForeignKey(Image,  on_delete=models.CASCADE)
+   user = models.ForeignKey(User,  on_delete=models.CASCADE,related_name='user_likes')
+   image = models.ForeignKey(Image,  on_delete=models.CASCADE, related_name='image_likes')
 
 
 

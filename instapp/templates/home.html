@@ -20,14 +20,9 @@
   <div class="card-body">
    <p> 
 
-        <form action="{% url 'like' post.pk %}" method="POST">
-        {%csrf_token%}
-       
-         <button type="submit",name='post_id',value='{{post.id}}', class='btn btn-danger btn-sm'>like</button>
-        
-       </form>
-     <!-- <button type="button" class="btn btn-outline-danger btn-sm">like</button> -->
-     
+       <a href="{% url 'like' post.id %}">
+     <button type="button" class="btn btn-outline-danger btn-sm">like</button></a>
+     {{post.likes}}
      <i class="fa fa-heart-o " aria-hidden="true"></i>
      <button type="button" class="btn btn-outline-danger btn-sm">Follow</button></p>
     <p class="card-text"><span style="color:blue">#{{post.img_name}}</span></p>

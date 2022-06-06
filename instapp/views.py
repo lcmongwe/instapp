@@ -1,5 +1,7 @@
-from audioop import reverse
+from django.urls import reverse
+
 from email import message
+from email.mime import image
 from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404,HttpResponseRedirect
 from .models import *
@@ -18,6 +20,7 @@ from .forms import RegisterUserForm
 
 # Create your views here.
 def home(request):
+    
     profile=Profile.objects.all()
 
     posts=Image.objects.all()
@@ -27,7 +30,7 @@ def home(request):
             form.save()
         messages.success(request,('comment posted'))
 
-    return render(request, 'home.html', {'posts': posts,'form': form,'profile':profile})
+    return render(request, 'home.html', {'posts': posts,'form': form,'profile':profile,})
 
 
 
@@ -40,11 +43,22 @@ def comment(request,image_id):
     return render(request, 'home.html',{'comment':comment,'form':form})
 
 
-def like(request,pk ):
-    post=get_object_or_404(Image,id=request.POST.get('post_id'))
-    post.likess.add(request.user)
-    # return HttpResponseRedirect(reverse('home',args=[str(pk)]))
-    return redirect('home',args=[str(pk)])
+def like(request,post_id ):
+    user = request.user
+    post=Image.objects.get(id=post_id)
+    current_likes= post.likes
+    liked=Likes.objects.filter(user=user,image=post).count()
+    if not liked:
+        liked =Likes.objects.create(user=user,image=post)
+        current_likes=current_likes +1
+    else:
+        liked =Likes.objects.create(user=user,image=post).delete()
+        current_likes=current_likes -1
+
+    post.likes=current_likes
+    post.save()
+    # return HttpResponseRedirect(reverse('home',args=[post_id]))
+    return redirect('home')
 
 
 def profile(request):
@@ -118,6 +132,7 @@ def register_user(request):
     if request.method == 'POST':
         form =RegisterUserForm(request.POST)
         if form.is_valid():
+
             username=request.POST['username']
             email=request.POST['email']
             subject='welcome to InstaApp'
