@@ -29,9 +29,14 @@
 
     <p class="card-text">{{post.imge_caption}}</p>
   </div>
-  
+  <hr>
+  <p>comments</p>
+
+<strong>{{post.comment.all}} posted:{{post.date_posted}}</strong>
+
+  <hr>
     
-    <form action="{% url 'comment' post.id %}" method="POST">
+    <form action="" method="POST">
         {%csrf_token%}
        <p>{{form}}
          <input type="submit">
@@ -49,7 +54,7 @@
 
   <div class="col-md-2">
   
-<p>  people you may know</p>
+<p style="color: white;font-weight: bold">  people you may know</p>
 
     {%for post in profile%}
   {% if post.profile_photo%}

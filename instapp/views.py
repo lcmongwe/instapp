@@ -34,13 +34,19 @@ def home(request):
 
 
 
-def comment(request,image_id):
-    comment=Comment.objects.get(pk=image_id)
-    form=CommentForm(request.POST )
-    if form.is_valid():
-        form.save()
-        return redirect('home')
-    return render(request, 'home.html',{'comment':comment,'form':form})
+def comment(request,slug):
+    comment=Comment.objects.all()
+    post=Image.objects.get(slug=slug)
+    if request.method == 'POST':
+        form=CommentForm(request.POST )
+        if form.is_valid():
+            obj=form.save(commit=False)
+            obj.post=post
+            form.save()
+            return redirect('home',slug=post.slug)
+    else:
+        form=CommentForm()
+    return render(request, 'home.html',{'comment':comment,'form':form,'post':post})
 
 
 def like(request,post_id ):
