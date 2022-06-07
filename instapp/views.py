@@ -36,17 +36,17 @@ def home(request):
 
 def comment(request,image_id):
     comment=Comment.objects.all()
-    post=Image.objects.get(pk=image_id)
+    post=Image.objects.get(id=image_id)
     if request.method == 'POST':
         form=CommentForm(request.POST )
         if form.is_valid():
-            obj=form.save(commit=False)
-            obj.post=post
+            form=form.save(commit=False)
+            form.post=post
             form.save()
             return redirect('home')
     else:
         form=CommentForm()
-    return render(request, 'home.html',{'comment':comment,'form':form,'post':post})
+    return render(request, 'comments.html',{'comment':comment,'form':form,'post':post})
 
 
 def like(request,post_id ):
