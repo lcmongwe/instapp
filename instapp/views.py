@@ -83,7 +83,8 @@ def post_picture(request):
         if form.is_valid():
             form.save()
         messages.success(request,('picture posted'))
-
+        
+        return redirect('home')
     return render(request, 'post.html',{'form': form,})
 
 def create_profile(request):
