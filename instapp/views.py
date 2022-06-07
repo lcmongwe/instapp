@@ -159,7 +159,7 @@ def register_user(request):
             message=f'Hi {username} welcome to InstaApp and have fun! '
             from_email=settings.EMAIL_HOST_USER
             recipients=[email]
-            send_mail(subject, message,from_email,recipients)
+            # send_mail(subject, message,from_email,recipients)
 
             form.save()
             username = form.cleaned_data['username']
