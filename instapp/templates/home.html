@@ -31,9 +31,13 @@
   </div>
   <hr>
   <p>comments</p>
-
-<strong>{{post.comment.all}} posted:{{post.date_posted}}</strong>
-
+{%if not post.comments.all%}
+no comments yet
+{%else%}
+{%for comment in post.comments.all%}
+<strong>{{comment.comment}} posted:{{comment.date_posted}}</strong>
+{%endfor%}
+{%endif%}
   <hr>
     
     <form action="" method="POST">

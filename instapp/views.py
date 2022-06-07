@@ -34,16 +34,16 @@ def home(request):
 
 
 
-def comment(request,slug):
+def comment(request,image_id):
     comment=Comment.objects.all()
-    post=Image.objects.get(slug=slug)
+    post=Image.objects.get(pk=image_id)
     if request.method == 'POST':
         form=CommentForm(request.POST )
         if form.is_valid():
             obj=form.save(commit=False)
             obj.post=post
             form.save()
-            return redirect('home',slug=post.slug)
+            return redirect('home')
     else:
         form=CommentForm()
     return render(request, 'home.html',{'comment':comment,'form':form,'post':post})
