@@ -14,6 +14,7 @@ urlpatterns=[
     path('comment/<image_id>', views.comment, name="comment"),
     path('search', views.search_profile, name="search_profile"),
     path('like/<post_id>', views.like, name="like"),
+    path('landing', views.landing, name="landing"),
 
 
 
@@ -21,5 +22,6 @@ urlpatterns=[
     path('login-user', views.login_user, name="login"),
     path('logout-user', views.logout_user, name="logout"),
     path('register-user', views.register_user, name="register"),
+    path('edit_profile', views.edit_profile, name="edit_profile"),
 
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

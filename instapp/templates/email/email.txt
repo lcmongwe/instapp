@@ -1,0 +1,3 @@
+Hello {{username}}
+
+Welcome to instaclone app! lets have some fun!

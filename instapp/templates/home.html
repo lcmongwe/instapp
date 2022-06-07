@@ -38,7 +38,7 @@
       {%if not post.comments.all%} no comments yet {%else%} {%for comment in post.comments.all%}
       <strong
         >{{comment.comment}} <br />
-        posted:{{comment.date_posted}}</strong
+        posted:{{comment.date_posted|timesince}}</strong
       >
       {%endfor%} {%endif%}
       <hr />

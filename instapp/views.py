@@ -1,4 +1,5 @@
 from django.urls import reverse
+from .email import send_welcome_email
 
 from email import message
 from email.mime import image
@@ -14,7 +15,7 @@ from django.conf import settings
 from django.shortcuts import render,redirect,get_object_or_404
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm,UserChangeForm
 from .forms import RegisterUserForm
 
 
@@ -32,6 +33,11 @@ def home(request):
 
     return render(request, 'home.html', {'posts': posts,'form': form,'profile':profile,})
 
+
+def landing(request):
+    form=RegisterUserForm()
+
+    return render(request, 'landing.html',{'form': form})
 
 
 def comment(request,image_id):
@@ -108,6 +114,13 @@ def search_profile(request):
     else:
         return render(request, 'searched.html',{})
 
+
+def edit_profile(request):
+    # if request.method == 'POST':
+    user=User.objects.all()
+    form = UserChangeForm(request.POST,instance=user)
+      
+    return render(request, 'authenticate/edit_profile.html', {"form":form})
 
 
 

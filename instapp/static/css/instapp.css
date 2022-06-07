@@ -78,6 +78,30 @@
 /* register ends */
 
 
+/* landing.html */
+.formla{
+width:60%;
+  height:60vh;
+  margin: 50px ;
+  margin-left: 40%;
+  background: linear-gradient(180deg, rgba(22, 30, 61, 0.65) 0%, rgba(238, 238, 238, 0.65) 100%);
+  /* background: linear-gradient(180deg, rgba(185, 105, 31, 0.66) 0%, rgba(6, 43, 172, 0.429) 100%); */
+  border-radius: 10px;
+  padding: 10px
+}
+
+
+.landingform{
+background: rgba(54, 87, 137, 0.37);
+  height: 60vh;
+  width:60%;
+  margin-left:20%;
+  border-radius:10px
+}
+
+/* landing ends */
+
+
 
 /* home.html */
 #row1{
