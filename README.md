@@ -9,7 +9,7 @@ MyInsta
 
 ### :bulb: PROJECT DESCRIPTION
 
-This is a simple Django program that allows a user to singup,login and log out of the application. the user acn also created a profile and update it, view various photos fro different people's. the user can search for othehr people profiles , like their photos and also follow them.
+This is a simple Django program that allows a user to singup,login and log out of the application. the user can also create a profile and update it, view various photos from different people. The user can search for other people's profiles , like their photos and also follow them.
 
 ### :pushpin:USER STORIES
 - A user can login and log out of the application .
