@@ -93,6 +93,9 @@ class RegisterUserForm(UserCreationForm):
     def __init__(self, *args,**kwargs):
         super(RegisterUserForm, self).__init__(*args,**kwargs)
 
+        for fieldname in ['username', 'password1', 'password2']:
+            self.fields[fieldname].help_text = None
+
         self.fields['username'].widget.attrs['class']='form-control'
         self.fields['password1'].widget.attrs['class']='form-control'
         self.fields['password2'].widget.attrs['class']='form-control'

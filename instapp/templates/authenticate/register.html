@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
+{%load static%}
+    {% block styles %} 
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+   
+     {% endblock %}
 {% block content%}
-<div class="registerform">
+<!-- <div class="registerform">
 <div class="formr">
 {%if form.errors%}
 
@@ -28,6 +33,50 @@ there was an error with the form
 </div>
 
 </div>
-</div>
+</div> -->
 
+
+<div class="mylogin">
+<div class="row loginform">
+<div class="row">
+  <div class="col-md"></div>
+  <div class="col-md-4">
+     <div class="col-md-4 loginpic">
+    <img src="{% static 'images/john1.jpg' %}" height="800px" width="800px" alt="My image">
+
+  </div>
+  </div>
+  <div class="col-md-6 forml">
+    {%if form.errors%}
+
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+there was an error with the form
+
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{%endif%}
+
+
+<div class="">
+  <h1 style="color:white; font-weight:bolder; "> <center>SignUp</center></h1>
+
+<form action="{% url 'register'%}" method="POST">
+
+    {% csrf_token %}
+
+   {{form.as_p}}
+   <br>
+   <center>
+<input type = "submit" value = "submit" class = "btn btn-secondary"> <br>
+Already  have an account? LogIn <a href="{% url 'login'%}">Here</a>
+</center>
+</form>
+  </div>
+  <div class="col"></div>
+</div>
+</div>
+</div>
+</div>
 {%endblock%}
