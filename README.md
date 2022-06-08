@@ -5,7 +5,7 @@ MyInsta
 
 ## SCREENSHOT
 
-<!-- ![MYPORTFOLIO](./portapp/static/images/screen2.png) -->
+![MYPORTFOLIO](./instapp/static/images/instscreen.png)
 
 ### :bulb: PROJECT DESCRIPTION
 
