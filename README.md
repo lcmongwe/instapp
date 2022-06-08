@@ -24,7 +24,7 @@ This is a simple Django program that allows a user to singup,login and log out o
 
 - Open terminal {Ctrl +Alt + T}
 - git clone https://github.com/lcmongwe/myinsta.git
-- cd myblog
+- cd myinsta
 - code . or atom . depending on your text editor
 - python3 manage.py runserver
 
