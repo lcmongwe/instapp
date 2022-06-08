@@ -93,6 +93,7 @@ def create_profile(request):
         if form.is_valid():
             form.save()
         messages.success(request,('Profile created'))
+        return redirect('home')
 
     return render(request, 'create_profile.html',{'form': form,})
 

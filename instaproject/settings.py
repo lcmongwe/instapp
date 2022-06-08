@@ -15,6 +15,7 @@ import os
 import django_heroku
 import dj_database_url
 from decouple import config,Csv
+import cloudinary_storage
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,6 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'instapp',
+    'cloudinary_storage',
+    'cloudinary',
     
 ]
 
@@ -168,6 +171,8 @@ os.path.join(BASE_DIR, 'static'),
 
 MEDIA_URL = 'media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -185,6 +190,20 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 django_heroku.settings(locals())
+
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'lumamo',
+    'API_KEY': '218762798119646',
+    'API_SECRET': 'OqsHrwFb-l8xmD_9eUcYBj_tVN8'
+}
+
+# cloudinary.config( 
+#   cloud_name = "lumamo", 
+#   api_key = "218762798119646", 
+#   api_secret = "OqsHrwFb-l8xmD_9eUcYBj_tVN8" 
+# )
+
 
 # EMAIL_BACKEND = config('EMAIL_BACKEND')
 # EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
