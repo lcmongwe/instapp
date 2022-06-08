@@ -1,15 +1,17 @@
 {% extends 'base.html' %}
-
-
+{%load static%}
+    {% block styles %} 
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+   
+     {% endblock %}
 {% block content%}
 
-
-
+<div class="profilecard">
 {%for post in profile%}
 
-<div class="card" style="width: 38rem;">
+<!-- <div class="card" style="width: 38rem;"> -->
   {% if post.profile_photo%}
-    <img class="card-img-top" src="{{post.profile_photo.url}}" alt="Card image cap" width="400px" height="400px"></div>
+    <img class="" src="{{post.profile_photo.url}}" alt="Card image cap" width="300px" height="300px">
  {%endif%}
     <div class="card-body">
     <p class="card-text">Name: {{post.name}} <br> Username: {{post.username}}</p>
@@ -17,17 +19,15 @@
     <p class="card-text">{{post.imge_caption}}</p>
   </div>
 <div class="card-body">
-    Bio <br>{{post.bio}}
-</div>
-<button type="button" class="btn btn-outline-secondary">
+    Bio <br>{{post.bio}} <br> <button type="button" class="btn btn-outline-secondary">
         <a class="" href="{% url 'update_profile' post.id %}"> Update Profile</a>
  </button>
-
-{%endfor%}
+</div>
 
 <br><br>
-
-
+<br><br>
+{%endfor%}
+</div>
 
 
 {%endblock%}
